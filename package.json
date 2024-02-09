@@ -15,7 +15,9 @@
         "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "prettier:verify": "prettier --check \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
         "postinstall": "husky install",
-        "precommit": "lint-staged"
+        "precommit": "lint-staged",
+        "a": "-------------------------------------------------------------------------------",
+        "start": "bash scripts/bash/create-scratch-org.bash"
     },
     "devDependencies": {
         "@lwc/eslint-plugin-lwc": "^1.1.2",

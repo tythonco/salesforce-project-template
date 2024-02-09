@@ -17,6 +17,10 @@ auth_file_suffix() {
     read_setting authFileSuffix
 }
 
+auth_dir() {
+    read_setting authDir
+}
+
 # Return the standard Dev Hub name given the project name
 devhub_name() {
     echo "$(project_name)DevHub"

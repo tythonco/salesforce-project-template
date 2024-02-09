@@ -7,9 +7,9 @@ public with sharing class UtilsTest {
             new Account(Name = 'two', AccountNumber = 'dos'),
             new Account(Name = 'three', AccountNumber = 'tres')
         };
-        Loan__c retrieved = (Loan__c) Utils.findObject(loans, 'Name', 'two');
+        Account retrieved = (Account) Utils.findObject(loans, 'Name', 'two');
         System.assertEquals('dos', retrieved.AccountNumber);
-        retrieved = (Loan__c) Utils.findObject(loans, 'Name', 'four');
+        retrieved = (Account) Utils.findObject(loans, 'Name', 'four');
         System.assertEquals(null, retrieved);
     }
 }
