@@ -25,5 +25,17 @@ check_error ${?} "Can't create your org!" \
     "Successfully created your scratch org." \
 
 echo && echo_info "Pushing source to the scratch org. This may take a while, so now might " \
-    "be a good time to stretch your legs and/or grab your productivity beverage of choice..."
+    "be a good time to stretch your legs and/or grab your productivity beverage of choice..." \
+    && echo
 sf project deploy start
+check_error ${?} "Pushing source to the scratch org failed!" \
+    "Source pushed successfully to scratch org."
+
+for directory in "Dev" "Mock" "Scratch"
+do
+    lower=$(node --eval "console.log('${directory}'.toLowerCase());")
+    echo && echo_info "Pushing ${lower} source to the scrath org..." && echo
+    sf project deploy start --source-dir "force-${lower}"
+    check_error ${?} "Pushing ${lower} source to the scratch org failed!" \
+        "${directory} source pushed successfully to scratch org."
+done

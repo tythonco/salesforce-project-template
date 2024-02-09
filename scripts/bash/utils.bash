@@ -4,7 +4,7 @@
 # @param $1 The setting to retrieve
 read_setting() {
     setting=$1
-    echo $(node -e "console.log(require('./package.json').${setting});")
+    echo $(node --eval "console.log(require('./package.json').${setting});")
 }
 
 # Return the name of the project given the contents of the `package.json` file
@@ -13,10 +13,12 @@ project_name() {
     read_setting name
 }
 
+# Return the auth file suffix used in this project
 auth_file_suffix() {
     read_setting authFileSuffix
 }
 
+# Return the auth directory used in this project
 auth_dir() {
     read_setting authDir
 }
@@ -34,6 +36,11 @@ prod_name() {
 # Return the standard QA org name
 qa_name() {
     echo "$(project_name)QA"
+}
+
+# Return the standard scratch org name
+scratch_name() {
+    echo "$(project_name)Scratch"
 }
 
 # Check the passed exit code and dsiplay the appropriate message based on it, exiting if

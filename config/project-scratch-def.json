@@ -1,5 +1,5 @@
 {
-    "orgName": "chuck company",
+    "orgName": "Tython",
     "edition": "Developer",
     "features": ["EnableSetPasswordInApi"],
     "settings": {
@@ -8,6 +8,11 @@
         },
         "mobileSettings": {
             "enableS1EncryptedStoragePref2": false
+        },
+        "securitySettings": {
+            "sessionSettings": {
+                "sessionTimeout": "TwelveHours"
+            }
         }
     }
 }
