@@ -22,7 +22,7 @@ public with sharing class Utils {
         }
         return null;
     }
-    
+
     /**
      * Tests are generically conduscted with triggers disabled, but trigger tests need triggers
      * enabled. This allows the insertion of a single record while ensuring that triggers are

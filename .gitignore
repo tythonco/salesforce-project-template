@@ -1,15 +1,22 @@
-# This file is used for Git repositories to specify intentionally untracked files that Git should ignore. 
+# This file is used for Git repositories to specify intentionally untracked files that Git should ignore.
 # If you are not using git, you can delete this file. For more information see: https://git-scm.com/docs/gitignore
 # For useful gitignore templates see: https://github.com/github/gitignore
+
+# Org Authentication files
+server.crt
+server.key
+*auth_url.txt
+*auth_url.json
 
 # Salesforce cache
 .sf/
 .sfdx/
 .localdevserver/
 deploy-options.json
+mdapioutput/
 
 # LWC VSCode autocomplete
-**/lwc/jsconfig.json
+jsconfig.json
 
 # LWC Jest coverage reports
 coverage/
@@ -43,3 +50,40 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+
+# VS Code user-specific settings
+.vscode/settings.json
+
+#Ignore mm.log File
+mm.log
+
+#Ignore Sublime Project Files
+*.sublime*
+
+#Ignore MavensMate Files
+apex-scripts/*
+
+#Ignore IlluminatedCloud Files
+.idea/
+IlluminatedCloud/
+*.iml
+
+#Ignore Eclipse Project Files
+salesforce.schema
+Referenced\ Packages/*
+.project
+.settings/*
+
+#Ignore Build Files
+.tmp
+dist
+*_prod
+deploy_*
+
+#Misc
+scripts/*.key
+scripts/*.crt
+*.temp
+*.todo
+
+**/main
