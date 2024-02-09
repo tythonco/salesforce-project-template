@@ -1,5 +1,7 @@
 {
-    "name": "salesforce-app",
+    "name": "project-name-placeholder",
+    "authDir": "auth",
+    "authFileSuffix": "_auth_url.txt",
     "private": true,
     "version": "1.0.0",
     "description": "Salesforce App",

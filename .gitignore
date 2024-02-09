@@ -87,3 +87,6 @@ scripts/*.crt
 *.todo
 
 **/main
+
+ignore/*
+!.keep
