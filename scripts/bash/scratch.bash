@@ -1,6 +1,10 @@
 #1/bin/bash
 
-for directory in "dev" "mock" "scratch"
-do
-    echo "$directory"
-done
+source scripts/bash/utils.bash
+
+npm run start
+focus_caller
+branch=$(git branch --show-current)
+org=$(sfdx force:org:display --json | grep -o '"username": "[^"]*' | grep -o '[^"]*$')
+sfdx alias:set ${branch}=${org}
+npm run checkout ${branch}

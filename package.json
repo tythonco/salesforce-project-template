@@ -17,7 +17,9 @@
         "postinstall": "husky install",
         "precommit": "lint-staged",
         "a": "-------------------------------------------------------------------------------",
-        "start": "bash scripts/bash/create-scratch-org.bash"
+        "start": "bash scripts/bash/create-scratch-org.bash",
+        "scratch": "bash scripts/bash/scratch.bash",
+        "checkout": "bash scripts/bash/checkout.bash"
     },
     "devDependencies": {
         "@lwc/eslint-plugin-lwc": "^1.1.2",

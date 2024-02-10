@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Uses settings found in `package.json` to create a scratch org, push potential source folders
+# to it, import data from the `data` directory, execute anonymous Apex if the `setup.apex` file
+# exists, and finally opens the new scratch org for the developer.
+
 source scripts/bash/utils.bash
 
 project_name="$(project_name)"
@@ -52,6 +56,16 @@ if [ -f "scripts/apex/${setupFile}" ]; then
     sf apex run --file "scripts/apex/${setupFile}"
     check_error ${?} "${setupFile} execution failed!" \
         "Successfully executed ${setupFile}"
+fi
+
+perm_sets="Test_Permissions_Assignment"
+if ["$perm_sets" = ""]; then
+    echo && echo_info "Assigning perm sets to user..." && echo
+    for perm_set in ${perm_Sets}; do
+        sf org assign permset --name "${perm_set}"
+        check_error ${?} "Error assigning perm set ${perm_set}" \
+            "Successfully assigned ${perm_set}"
+    done
 fi
 
 sf project reset tracking --no-prompt
