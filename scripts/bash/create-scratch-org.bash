@@ -38,9 +38,20 @@ for name in "App" "Dev" "Mock" "Scratch"; do
     fi
 done
 
-if [ -d data ]; then
+if [ -d data ] && [ ! -z "$(ls -A data)" ]; then
+    echo && echo_info "Beginning import from data directory..." && echo
     files=$(ls -1 data/*| paste -sd "," -)
     sf data import tree --files "${files}"
+    check_error ${?} "Importing default data to the scratch org failed!" \
+        "Default data was successfully imported into the scratch org."
+fi
+
+setupFile="setup.apex"
+if [ -f "scripts/apex/${setupFile}" ]; then
+    echo && echo_info "About to execute ${setupFile}..." && echo
+    sf apex run --file "scripts/apex/${setupFile}"
+    check_error ${?} "${setupFile} execution failed!" \
+        "Successfully executed ${setupFile}"
 fi
 
 sf project reset tracking --no-prompt
