@@ -27,8 +27,7 @@ check_error ${?} "Can't create your org!" \
 echo && echo_info "Pushing source to the scratch org. This may take a while, so now might " \
     "be a good time to stretch your legs and/or grab your productivity beverage of choice..." \
     && echo
-for name in "App" "Dev" "Mock" "Scratch"
-do
+for name in "App" "Dev" "Mock" "Scratch"; do
     lower=$(node --eval "console.log('${name}'.toLowerCase());")
     dir="force-${lower}"
     if [ -d $dir ]; then
@@ -38,6 +37,11 @@ do
             "${name} source pushed successfully to scratch org."
     fi
 done
+
+if [ -d data ]; then
+    files=$(ls -1 data/*| paste -sd "," -)
+    sf data import tree --files "${files}"
+fi
 
 sf project reset tracking --no-prompt
 echo && echo_info "Opening scratch org for develoopment, may the flow be with you!" && echo

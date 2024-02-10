@@ -3,16 +3,22 @@
         {
             "attributes": {
                 "type": "Account",
-                "referenceId": "AccountRef1"
+                "referenceId": "AccountRef2"
             },
-            "Name": "One"
+            "Name": "One",
+            "Opportunities": {
+                "records": []
+            }
         },
         {
             "attributes": {
                 "type": "Account",
                 "referenceId": "AccountRef3"
             },
-            "Name": "Two"
+            "Name": "Two",
+            "Opportunities": {
+                "records": []
+            }
         }
     ]
 }
