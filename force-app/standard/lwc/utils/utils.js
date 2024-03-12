@@ -1,8 +1,8 @@
 /* eslint-disable @lwc/lwc/no-async-operation */
 import safeAwait from './safeAwait';
-import { debugLog } from './loggingTools';
+import { debugLog, debugVar, deProxyObj } from './loggingTools';
 
-export { debugLog, safeAwait };
+export { debugLog, debugVar, deProxyObj, safeAwait };
 
 /**
  * Workaround for overriding style rules in child components "hidden" by Shadow DOM
@@ -36,24 +36,6 @@ export const injectStylesLWC = ({ cmp, selector, styles }) => {
  */
 export const getResourcePath = (resourceURL) => {
     return resourceURL.slice(resourceURL.indexOf('/resource'));
-};
-
-/**
- * Accept a CamelCaseString and return a Space Separated String with the prefix of
- * 'Permissions' removed.
- * @param {String} input, The camel case string to convert
- */
-export const formatSystemPermissionNames = (input) => {
-    let result = input.replace(/^Permissions/, '').replace(/([A-Z])/g, ' $1');
-    result = result.toLowerCase();
-    result = result
-        .split(' ')
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-    return {
-        id: input,
-        label: result
-    };
 };
 
 /**

@@ -32,7 +32,7 @@ const debugLog = async (label, ...args) => {
         font-weight:600;
     `;
     const logLabel = args.length ? label : '';
-    const displayArgs = [];
+    let displayArgs = [];
     if (args.length) {
         displayArgs = args.map((arg) => {
             if (arg && typeof arg === 'object' && isEvent(arg)) {
