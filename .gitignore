@@ -90,3 +90,4 @@ scripts/*.crt
 
 ignore/*
 !.keep
+**/legacy/
