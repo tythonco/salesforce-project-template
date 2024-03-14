@@ -22,7 +22,7 @@
         "precommit": "lint-staged",
         "a": "-------------------------------------------------------------------------------",
         "start": "bash scripts/bash/create-scratch-org.bash",
-        "scratch": "bash scripts/bash/scratch.bash",
+        "scratch": "bash scripts/bash/create-synced-scratch.bash",
         "checkout": "bash scripts/bash/checkout.bash"
     },
     "devDependencies": {
