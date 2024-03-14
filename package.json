@@ -1,10 +1,14 @@
 {
     "name": "project-name-placeholder",
-    "authDir": "auth",
-    "authFileSuffix": "_auth_url.txt",
     "private": true,
     "version": "1.0.0",
     "description": "Salesforce App",
+    "a": "-------------------------------------------------------------------------------",
+    "authDir": "auth",
+    "authFileSuffix": "_auth_url.txt",
+    "apexSetup": "setup.apex",
+    "permSets": "Test_Permission_Set",
+    "b": "-------------------------------------------------------------------------------",
     "scripts": {
         "lint": "eslint **/{aura,lwc}/**/*.js",
         "test": "npm run test:unit",

@@ -18,6 +18,16 @@ auth_file_suffix() {
     read_setting authFileSuffix
 }
 
+# Return the apex setup script used in this project
+apex_setup() {
+    read_setting apexSetup
+}
+
+# Return the perm set used in this project
+perm_sets() {
+    read_setting permSets
+}
+
 # Return the auth directory used in this project
 auth_dir() {
     read_setting authDir

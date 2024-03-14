@@ -10,6 +10,7 @@
             "enableS1EncryptedStoragePref2": false
         },
         "securitySettings": {
+            "lockerServiceNext": false,
             "sessionSettings": {
                 "sessionTimeout": "TwelveHours"
             }

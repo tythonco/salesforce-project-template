@@ -9,6 +9,8 @@ source scripts/bash/utils.bash
 project_name="$(project_name)"
 devhub_name="$(devhub_name)"
 sfdx_auth_file="$(auth_dir)/sfdx$(auth_file_suffix)"
+apex_setup="$(apex_setup)"
+perm_sets="$(perm_sets)"
 
 echo && echo_info "Authorizing you with the ${project_name} Dev Hub org..." && echo
 sf auth sfdxurl store \
@@ -50,12 +52,11 @@ if [ -d data ] && [ ! -z "$(ls -A data)" ]; then
         "Default data was successfully imported into the scratch org."
 fi
 
-setupFile="setup.apex"
-if [ -f "scripts/apex/${setupFile}" ]; then
-    echo && echo_info "About to execute ${setupFile}..." && echo
-    sf apex run --file "scripts/apex/${setupFile}"
-    check_error ${?} "${setupFile} execution failed!" \
-        "Successfully executed ${setupFile}"
+if [ -f "scripts/apex/${apex_setup}" ]; then
+    echo && echo_info "About to execute ${apex_setup}..." && echo
+    sf apex run --file "scripts/apex/${apex_setup}"
+    check_error ${?} "${apex_setup} execution failed!" \
+        "Successfully executed ${apex_setup}"
 fi
 
 perm_sets="Test_Permissions_Assignment"
