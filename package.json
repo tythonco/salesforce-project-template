@@ -8,6 +8,8 @@
     "authFileSuffix": "_auth_url.txt",
     "apexSetup": "setup.apex",
     "permSets": "Test_Permission_Set",
+    "errEmail": "devhub@tython.co",
+    "pkgType": "Managed",
     "b": "-------------------------------------------------------------------------------",
     "scripts": {
         "lint": "eslint **/{aura,lwc}/**/*.js",

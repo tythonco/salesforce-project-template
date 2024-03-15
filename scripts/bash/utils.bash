@@ -53,6 +53,16 @@ scratch_name() {
     echo "$(project_name)Scratch"
 }
 
+# Return the email address to send errors to
+err_email() {
+    read_setting errEmail
+}
+
+# Return the type of package to create
+pkg_type() {
+    read_setting pkgType
+}
+
 # Check the passed exit code and dsiplay the appropriate message based on it, exiting if
 # there's an error
 # @param $1: The exit code of the previously executed command

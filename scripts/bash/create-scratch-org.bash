@@ -4,6 +4,7 @@
 # to it, import data from the `data` directory, execute anonymous Apex if the `setup.apex` file
 # exists, and finally opens the new scratch org for the developer.
 
+set -e
 source scripts/bash/utils.bash
 
 project_name="$(project_name)"

@@ -5,6 +5,7 @@
 # creates an alias to the default org that is the same as that branch, allowing the use of
 # `npm run checkout` to move simultaneously between branches and matching orgs.`
 
+set -e
 source scripts/bash/utils.bash
 
 npm run start
