@@ -6,6 +6,6 @@
 set -e
 
 branch=${1}
-git checkout "${branch}"
-sf config set target-org "${branch}"
-sf project deploy start
+git checkout "${branch}" > /dev/null
+sf config set target-org "${branch}" > /dev/null
+sf project deploy start > /dev/null

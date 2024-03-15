@@ -39,7 +39,7 @@ for name in "App" "Dev" "Mock" "Scratch"; do
     dir="force-${lower}"
     if [ -d $dir ]; then
         echo && echo_info "Pushing ${lower} source to the scrath org..." && echo
-        sf project deploy start --source-dir "${dir}"
+        sf project deploy start --source-dir "${dir}" > /dev/null
         check_error ${?} "Pushing ${lower} source to the scratch org failed!" \
             "${name} source pushed successfully to scratch org."
     fi
@@ -48,14 +48,14 @@ done
 if [ -d data ] && [ ! -z "$(ls -A data)" ]; then
     echo && echo_info "Beginning import from data directory..." && echo
     files=$(ls -1 data/*| paste -sd "," -)
-    sf data import tree --files "${files}"
+    sf data import tree --files "${files}" > /dev/null
     check_error ${?} "Importing default data to the scratch org failed!" \
         "Default data was successfully imported into the scratch org."
 fi
 
 if [ -f "scripts/apex/${apex_setup}" ]; then
     echo && echo_info "About to execute ${apex_setup}..." && echo
-    sf apex run --file "scripts/apex/${apex_setup}"
+    sf apex run --file "scripts/apex/${apex_setup}" > /dev/null
     check_error ${?} "${apex_setup} execution failed!" \
         "Successfully executed ${apex_setup}"
 fi
@@ -64,7 +64,7 @@ perm_sets="Test_Permissions_Assignment"
 if ["$perm_sets" = ""]; then
     echo && echo_info "Assigning perm sets to user..." && echo
     for perm_set in ${perm_Sets}; do
-        sf org assign permset --name "${perm_set}"
+        sf org assign permset --name "${perm_set}" > /dev/null
         check_error ${?} "Error assigning perm set ${perm_set}" \
             "Successfully assigned ${perm_set}"
     done

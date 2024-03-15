@@ -14,5 +14,5 @@ branch=$(git branch --show-current)
 org=$(sf org display --json \
     | grep -o '"username": "[^"]*' \
     | grep -o '[^"]*$')
-sf alias set ${branch}=${org}
+sf alias set ${branch}=${org} > /dev/null
 npm run checkout ${branch}
