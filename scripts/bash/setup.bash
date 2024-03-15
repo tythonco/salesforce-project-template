@@ -5,7 +5,7 @@
 npm install
 sf config set org-custom-metadata-templates=templates
 
-if [ $(basename ${SHELL}) = "zsh" ]; then
+if [ ! $(basename ${SHELL}) = "zsh" ]; then
     file="${HOME}/.zshrc"
 else
     file="${HOME}/.bashrc"

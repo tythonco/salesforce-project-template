@@ -23,6 +23,7 @@
         "postinstall": "husky install",
         "precommit": "lint-staged",
         "a": "-------------------------------------------------------------------------------",
+        "setup": "bash scripts/bash/setup.bash",
         "start": "bash scripts/bash/create-scratch-org.bash",
         "scratch": "bash scripts/bash/create-synced-scratch.bash",
         "checkout": "bash scripts/bash/checkout.bash",
