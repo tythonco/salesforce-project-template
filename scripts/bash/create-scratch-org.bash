@@ -6,12 +6,7 @@
 
 set -e
 source scripts/bash/utils.bash
-
-project_name="$(project_name)"
-devhub_name="$(devhub_name)"
-sfdx_auth_file="$(auth_dir)/sfdx$(auth_file_suffix)"
-apex_setup="$(apex_setup)"
-perm_sets="$(perm_sets)"
+source scripts/bash/declare-vars.bash
 
 echo && echo_info "Authorizing you with the ${project_name} Dev Hub org..." && echo
 sf auth sfdxurl store \

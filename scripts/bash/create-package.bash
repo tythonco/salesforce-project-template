@@ -5,13 +5,7 @@
 
 set -e
 source scripts/bash/utils.bash
-
-project_name="$(project_name)"
-pkg_name="$project_name"
-devhub_name="$(devhub_name)"
-err_email="$(err_email)"
-pkg_path=$(node --eval "console.log(require('./sfdx-project.json').packageDirectories[0].path);")
-pkg_type=$(pkt_type)
+source scripts/bash/declare-vars.bash
 
 if [[ ! -d "$pkg_path" ]]; then
     echo && echo_error "Package directory ${pkg_path} does not exist!"
