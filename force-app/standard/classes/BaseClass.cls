@@ -1,0 +1,2 @@
+public virtual class BaseClass {
+}
