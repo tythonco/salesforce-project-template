@@ -25,7 +25,10 @@
         "a": "-------------------------------------------------------------------------------",
         "start": "bash scripts/bash/create-scratch-org.bash",
         "scratch": "bash scripts/bash/create-synced-scratch.bash",
-        "checkout": "bash scripts/bash/checkout.bash"
+        "checkout": "bash scripts/bash/checkout.bash",
+        "test-pack": "bash scripts/bash/create-test-package",
+        "test-vers": "bash scripts/bash/create-package-version",
+        "install-test-pack": "bash scripts/bash/install-test-pacckage"
     },
     "devDependencies": {
         "@lwc/eslint-plugin-lwc": "^1.1.2",
