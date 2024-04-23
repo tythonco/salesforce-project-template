@@ -53,6 +53,11 @@ scratch_name() {
     echo "$(project_name)Scratch"
 }
 
+# Return the standard test package name
+test_org() {
+    echo "$(project_name)PackageTestOrg"
+}
+
 # Return the email address to send errors to
 err_email() {
     read_setting errEmail

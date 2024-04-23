@@ -33,11 +33,11 @@ export default class BaseComponent extends LightningElement {
 
     /**
      * Handle the given error event with default options
-     * @param {HandledEvent} errorEvent
+     * @param {HandledEvent} error
      * @param {string} label
      */
-    handleError(errorEvent, label = 'There was a problem') {
-        const message = errorEvent?.message || errorEvent?.body?.message || '';
+    handleError(error, label = 'There was a problem') {
+        const message = error?.message || error?.body?.message || '';
         this.showNotification({
             title: 'Error',
             message: `${label}. ${message}`,

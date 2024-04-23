@@ -10,7 +10,6 @@ if [ ! $(basename ${SHELL}) = "zsh" ]; then
 else
     file="${HOME}/.bashrc"
 fi
-
 first_alias=$(head -1 scripts/bash/aliases.bash)
 if grep -q "$first_alias" "$file"; then
     cat scripts/bash/aliases.bash >> $file

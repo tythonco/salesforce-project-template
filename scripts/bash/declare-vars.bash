@@ -2,6 +2,8 @@
 
 source scripts/bash/utils.bash
 
+project_name="$(project_name)"
+
 apex_setup="$(apex_setup)"
 devhub_name="$(devhub_name)"
 err_email="$(err_email)"
@@ -14,5 +16,5 @@ pkg_path=$(node --eval "
     ).packageDirectories[0].path);"
 )
 pkg_type=$(pkg_type)
-project_name="$(project_name)"
 sfdx_auth_file="$(auth_dir)/sfdx$(auth_file_suffix)"
+test_org=$(test_org)
