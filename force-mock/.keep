@@ -1,0 +1,3 @@
+This file ensures that the parent folder is in the repository. Once this folder has actual content, this file can be removed.
+
+The `force-mock` folder is for mock components, generally meant to be added to a scratch org.

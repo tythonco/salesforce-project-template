@@ -1,0 +1,3 @@
+This file ensures that the parent folder is in the repository. Once this folder has actual content, this file can be removed.
+
+The `force-dev` folder is intended for components that are only meant to be installed on an org being worked on by a developer, such as a scratch org or sandbox.

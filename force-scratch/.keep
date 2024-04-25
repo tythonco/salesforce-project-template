@@ -1,0 +1,3 @@
+This file ensures that the parent folder is in the repository. Once this folder has actual content, this file can be removed.
+
+The `force-scratch` folder is for components explicitly meant to be added only to a scratch org.
